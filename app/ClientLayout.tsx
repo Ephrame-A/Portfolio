@@ -1,17 +1,14 @@
+'use client'
+
 import type React from "react"
 import "./globals.css"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
+import { AnimatePresence } from "framer-motion"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "YourName - Junior Front-End Developer",
-  description: "Portfolio website showcasing my skills in React, Tailwind CSS, HTML, and CSS",
-}
-
-export default function RootLayout({
+export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode
@@ -20,10 +17,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <AnimatePresence mode="wait">
+            {children}
+          </AnimatePresence>
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
