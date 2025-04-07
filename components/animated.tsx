@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import type { ReactNode } from "react"
+import { useEffect, useState } from "react"
 
 interface AnimatedSectionProps {
   children: ReactNode
@@ -9,7 +10,21 @@ interface AnimatedSectionProps {
   id?: string
 }
 
-export default function AnimatedSection({ children, className }: AnimatedSectionProps) {
+export default function AnimatedSection({ children, className, id }: AnimatedSectionProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <section className={className} id={id}>
+        {children}
+      </section>
+    )
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -17,6 +32,7 @@ export default function AnimatedSection({ children, className }: AnimatedSection
       transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.2 }}
       className={className}
+      id={id}
     >
       {children}
     </motion.section>

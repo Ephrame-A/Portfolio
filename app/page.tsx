@@ -12,10 +12,18 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <section id="about">
+          <About />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
       <Footer />
     </div>

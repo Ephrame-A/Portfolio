@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <AnimatedSection className="bg-gradient-to-br from-sky-600 via-pink-500 to-red-500 dark:from-purple-900 dark:via-pink-800 dark:to-red-800 py-20 text-white">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Hi, I'm Ephrame</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Hi, I{"'"}m Ephrame</h1>
         <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-200">
           A Junior Front-End Developer specializing in React and Tailwind CSS
         </p>
